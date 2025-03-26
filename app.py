@@ -1,5 +1,16 @@
 import streamlit as st
 import nltk
+import os
+
+# Define a custom NLTK data path
+NLTK_DIR = os.path.abspath("./nltk_data")
+nltk.data.path.append(NLTK_DIR)
+
+# Download necessary NLTK datasets
+nltk.download('stopwords', download_dir=NLTK_DIR)
+nltk.download('punkt', download_dir=NLTK_DIR)
+nltk.download('punkt_tab', download_dir=NLTK_DIR)
+
 import string
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
